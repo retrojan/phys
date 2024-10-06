@@ -40,7 +40,7 @@
         resizeCanvas(); // Устанавливаем размеры в начале
 
         // Звук отскока
-        // const bounceSound = new Audio('bounce.mp3');  Замените 'bounce.mp3' на путь к вашему файлу
+        const bounceSound = new Audio('bounce.mp3'); // Замените 'bounce.mp3' на путь к вашему файлу
 
         // Параметры физики
         const gravity = 0.05;   // Замедленная гравитация
@@ -111,13 +111,13 @@
                 ball.x = canvas.width - ball.radius;  // Останавливаем у правой границы
                 ball.vx *= -bounceFactorMouse;  // Меняем направление скорости и уменьшаем её
                 bounceSound.currentTime = 0; // Сбрасываем время воспроизведения
-            //    bounceSound.play(); // Проигрываем звук
+                bounceSound.play(); // Проигрываем звук
             }
             if (ball.x - ball.radius < 0) {
                 ball.x = ball.radius;  // Останавливаем у левой границы
                 ball.vx *= -bounceFactorMouse;  // Меняем направление скорости и уменьшаем её
                 bounceSound.currentTime = 0; // Сбрасываем время воспроизведения
-             //   bounceSound.play(); // Проигрываем звук
+                bounceSound.play(); // Проигрываем звук
             }
             if (ball.y + ball.radius > canvas.height) {
                 ball.y = canvas.height - ball.radius;  // Останавливаем у нижней границы
